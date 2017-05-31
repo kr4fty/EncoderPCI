@@ -9,9 +9,9 @@ You may activate them in the setting file (advanced).
 Each row section represents a port(0-3).
 Not all MCUs have all Ports/Pins physically available.
 
-**ATTENTION!**
+**ATTENTION!**<br />
+If you use the EnableInterrup library in your program to enable one or more interrupts, you should define *LIBCALL_ENABLEINTERRUPT* before #includes. This is to avoid compilation problems<br />
 
-If you use the EnableInterrup library in your program to enable one or more interrupts, you should define **LIBCALL_ENABLEINTERRUPT** before #includes. This is to avoid compilation problems
 For more information read this [issue](https://github.com/GreyGnome/EnableInterrupt/issues/13#issuecomment-123439620)
 
 ### Official Arduinos
