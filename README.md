@@ -9,11 +9,11 @@ You may activate them in the setting file (advanced).
 Each row section represents a port(0-3).
 Not all MCUs have all Ports/Pins physically available.
 
-ATTENTION!
-If you use the EnableInterrup library in your program to enable one or more interrupts, you should define LIBCALL_ENABLEINTERRUPT before #includes. This is to avoid compilation problems
+**ATTENTION!**
+If you use the EnableInterrup library in your program to enable one or more interrupts, you should define **LIBCALL_ENABLEINTERRUPT** before #includes. This is to avoid compilation problems
 For more information read this [issue](https://github.com/GreyGnome/EnableInterrupt/issues/13#issuecomment-123439620)
 
-#### Official Arduinos
+### Official Arduinos
 ```
 | PCINT |  Uno/Nano/Mini  |   Mega/2560    | Leonardo/Micro | HL2 (8/16/32u2) |
 | ----- | --------------- | -------------- | -------------- | --------------- |
@@ -46,7 +46,7 @@ For more information read this [issue](https://github.com/GreyGnome/EnableInterr
 | ----- | --------------- | -------------- | -------------- | --------------- |
 ```
 
-#### Atmel Attinys
+### Atmel Attinys
 ```
 | PCINT |   Attiny13   |    Attiny x4    |   Attiny x5   |     Attiny x41      |
 | ----- | ------------ | --------------- | ------------- | ------------------- |
@@ -70,7 +70,7 @@ For more information read this [issue](https://github.com/GreyGnome/EnableInterr
 | ----- | ------------ | --------------- | ------------- | ------------------- |
 ```
 
-####Other Atmel MCUs
+### Other Atmel MCUs
 ```
 | PCINT | ATmega644P/1284P  |
 | ----- | ----------------- |
