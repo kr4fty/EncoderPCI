@@ -16,7 +16,7 @@ If you use the EnableInterrup library in your program to enable one or more inte
 For more information read this [issue](https://github.com/GreyGnome/EnableInterrupt/issues/13#issuecomment-123439620)
 
 ### Official Arduinos
-```
+
 | PCINT |  Uno/Nano/Mini  |   Mega/2560    | Leonardo/Micro | HL2 (8/16/32u2) |
 | ----- | --------------- | -------------- | -------------- | --------------- |
 |     0 |  8       (PB0)  | 53 SS   (PB0)  |    SS   (PB0)* |  0 SS   (PB0)*  |
@@ -46,10 +46,10 @@ For more information read this [issue](https://github.com/GreyGnome/EnableInterr
 |    22 |  6       (PD6)  | A14     (PK6)  |                |                 |
 |    23 |  7       (PD7)  | A15     (PK7)  |                |                 |
 | ----- | --------------- | -------------- | -------------- | --------------- |
-```
+
 
 ### Atmel Attinys
-```
+
 | PCINT |   Attiny13   |    Attiny x4    |   Attiny x5   |     Attiny x41      |
 | ----- | ------------ | --------------- | ------------- | ------------------- |
 |     0 | 0 MOSI (PB0) |  0       (PA0)  | 0 MOSI  (PB0) | A0/D0         (PA0) |
@@ -70,10 +70,10 @@ For more information read this [issue](https://github.com/GreyGnome/EnableInterr
 |    14 |              |                 |               |                     |
 |    15 |              |                 |               |                     |
 | ----- | ------------ | --------------- | ------------- | ------------------- |
-```
+
 
 ### Other Atmel MCUs
-```
+
 | PCINT | ATmega644P/1284P  |
 | ----- | ----------------- |
 |     0 | A0/D24      (PA0) |
@@ -112,4 +112,4 @@ For more information read this [issue](https://github.com/GreyGnome/EnableInterr
 |    30 | 14 PWM      (PD6) |
 |    31 | 15 PWM      (PD7) |
 | ----- | ----------------- |
-```
+
