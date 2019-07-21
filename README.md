@@ -2,6 +2,26 @@
 A quadrature encoder library that can use hardware or pin-change interrupts by using the [EnableInterrupt](https://github.com/NicoHood/PinChangeInterrupt) library.<br />
 Based on the [Encoder](https://github.com/PaulStoffregen/Encoder) library by PaulStoffregen
 
+## Usage:
+Define Encoder objects using this :
+```cpp
+Encoder myEnc= Encoder(pinA, pinB);
+```
+
+Read encoder output
+```cpp
+int32_t encoderOutput = myEnc.read
+```
+Reset encoder count to 0 (in home position):
+```cpp
+myEnc.write(0)  
+```
+Reset encoder count to a value
+```cpp
+myEnc.write(value)
+```
+
+
 ## PinchangeInterrupt Table
 
 Pins with * are not broken out/deactivated by default.
@@ -112,4 +132,3 @@ For more information read this [issue](https://github.com/GreyGnome/EnableInterr
 |    30 | 14 PWM      (PD6) |
 |    31 | 15 PWM      (PD7) |
 | ----- | ----------------- |
-
