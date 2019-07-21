@@ -1,5 +1,5 @@
 # EncoderPCI
-A quadrature encoder library that can use hardware or pin-change interrupts by using the [EnableInterrupt](https://github.com/NicoHood/PinChangeInterrupt) library.<br />
+A quadrature encoder library that can use hardware or pin-change interrupts by using the [EnableInterrupt](https://github.com/GreyGnome/EnableInterrupt) library.<br />
 Based on the [Encoder](https://github.com/PaulStoffregen/Encoder) library by PaulStoffregen
 
 ## Usage:
