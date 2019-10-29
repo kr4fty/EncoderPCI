@@ -1,7 +1,7 @@
 #ifndef EncoderPCI_h
 #define EncoderPCI_h
 
-//#define LIBCALL_ENABLEINTERRUPT 
+//#define LIBCALL_ENABLEINTERRUPT
 #include <Arduino.h>
 #include <EnableInterrupt.h>
 
@@ -23,9 +23,13 @@ typedef struct {
 class Encoder
 {
  public:
+
+     /*************************************************************/
+    // Define Encoder objects using this :
+    // Encoder myEnc= Encoder(pinA, pinB);
     Encoder(uint8_t pin1, uint8_t pin2)
     {
-    
+
     #ifdef INPUT_PULLUP
     pinMode(pin1, INPUT_PULLUP);
     pinMode(pin2, INPUT_PULLUP);
@@ -35,13 +39,13 @@ class Encoder
     pinMode(pin2, INPUT);
     digitalWrite(pin2, HIGH);
     #endif
-    
+
     encoder.pin1_register = PIN_TO_BASEREG(pin1);
     encoder.pin1_bitmask  = PIN_TO_BITMASK(pin1);
     encoder.pin2_register = PIN_TO_BASEREG(pin2);
     encoder.pin2_bitmask  = PIN_TO_BITMASK(pin2);
     encoder.position = 0;
-    
+
     // allow time for a passive R-C filter to charge
     // through the pullup resistors, before reading
     // the initial state
@@ -52,9 +56,12 @@ class Encoder
     encoder.state = s;
     interrupts_in_use = attach_interrupt(pin1, &encoder);
     interrupts_in_use += attach_interrupt(pin2, &encoder);
-    
+
     }
 
+    /*************************************************************/
+    // Read encoder output
+    // int32_t encoderOutput = myEnc.read
     int32_t read() {
     noInterrupts();
     int32_t tempTicks = encoder.position;
@@ -62,11 +69,23 @@ class Encoder
 
     return tempTicks;
     }
+
+
+    /*************************************************************/
+    //  Reset encoder count to a value
+    //  myEnc.write(value)
+    //  myEnc.write(0) // for reseting to 0 (home position)
     void write(int32_t value) {
     noInterrupts();
     encoder.position = value;
     interrupts();
     }
+
+
+    /*************************************************************/
+    // Internal methods and properties:
+
+
     static void update(Encoder_internal_state_t *arg) {
         uint8_t p1val = DIRECT_PIN_READ(arg->pin1_register, arg->pin1_bitmask);
         uint8_t p2val = DIRECT_PIN_READ(arg->pin2_register, arg->pin2_bitmask);
@@ -89,9 +108,9 @@ class Encoder
                 return;
         }
     }
-  
+
     static Encoder_internal_state_t * interruptArgs[ENCODER_ARGLIST_SIZE];
-  
+
  private:
   static uint8_t attach_interrupt(uint8_t pin, Encoder_internal_state_t *state) {
     switch (pin) {
@@ -196,7 +215,7 @@ class Encoder
     }
     return 1;
   }
-  
+
   Encoder_internal_state_t encoder;
   uint8_t interrupts_in_use;
 
